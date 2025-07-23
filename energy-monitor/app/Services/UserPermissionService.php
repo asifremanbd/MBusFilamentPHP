@@ -13,9 +13,18 @@ class UserPermissionService
 {
     /**
      * Get gateways authorized for the user
+     * @param User|int $user User object or user ID
      */
-    public function getAuthorizedGateways(User $user): Collection
+    public function getAuthorizedGateways($user): Collection
     {
+        // If user is an ID, fetch the User object
+        if (is_numeric($user)) {
+            $user = User::find($user);
+            if (!$user) {
+                return collect(); // Return empty collection if user not found
+            }
+        }
+
         if ($user->isAdmin()) {
             return Gateway::all();
         }

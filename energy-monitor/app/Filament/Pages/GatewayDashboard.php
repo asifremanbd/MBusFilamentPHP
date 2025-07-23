@@ -148,6 +148,6 @@ class GatewayDashboard extends Page implements HasForms
         
         // For non-admin users, use the permission service
         $permissionService = app(UserPermissionService::class);
-        return $permissionService->getAuthorizedGateways($user->id);
+        return $permissionService->getAuthorizedGateways($user);
     }
 }
