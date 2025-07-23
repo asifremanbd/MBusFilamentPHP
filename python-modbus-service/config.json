@@ -1,0 +1,226 @@
+[
+  {
+    "device_id": 1,
+    "ip": "10.225.57.5",
+    "port": 502,
+    "slave_id": 1,
+    "timeout": 10,
+    "registers": [
+      {
+        "address": 40001,
+        "parameter": "Voltage (L-N)",
+        "data_type": "float",
+        "scale": 1.0,
+        "unit": "V",
+        "description": "Line to Neutral Voltage"
+      },
+      {
+        "address": 40003,
+        "parameter": "Current",
+        "data_type": "float",
+        "scale": 1.0,
+        "unit": "A",
+        "description": "Current Reading"
+      },
+      {
+        "address": 40005,
+        "parameter": "Active Power",
+        "data_type": "float",
+        "scale": 1.0,
+        "unit": "kW",
+        "description": "Active Power Consumption"
+      },
+      {
+        "address": 40007,
+        "parameter": "Total Energy",
+        "data_type": "float",
+        "scale": 1.0,
+        "unit": "kWh",
+        "description": "Total Energy Consumption"
+      }
+    ]
+  },
+  {
+    "device_id": 2,
+    "ip": "192.168.100.11",
+    "port": 502,
+    "slave_id": 2,
+    "timeout": 10,
+    "registers": [
+      {
+        "address": 40001,
+        "parameter": "Flow Rate",
+        "data_type": "float",
+        "scale": 1.0,
+        "unit": "L/min",
+        "description": "Water Flow Rate"
+      },
+      {
+        "address": 40003,
+        "parameter": "Total Volume",
+        "data_type": "float",
+        "scale": 1.0,
+        "unit": "L",
+        "description": "Total Water Volume"
+      }
+    ]
+  },
+  {
+    "device_id": 3,
+    "ip": "192.168.100.12",
+    "port": 502,
+    "slave_id": 3,
+    "timeout": 10,
+    "registers": [
+      {
+        "address": 40001,
+        "parameter": "Power Consumption",
+        "data_type": "float",
+        "scale": 1.0,
+        "unit": "kW",
+        "description": "AC Unit 1 Power"
+      },
+      {
+        "address": 40003,
+        "parameter": "Runtime",
+        "data_type": "uint32",
+        "scale": 1.0,
+        "unit": "hours",
+        "description": "AC Unit 1 Runtime"
+      }
+    ]
+  },
+  {
+    "device_id": 4,
+    "ip": "192.168.100.13",
+    "port": 502,
+    "slave_id": 4,
+    "timeout": 10,
+    "registers": [
+      {
+        "address": 40001,
+        "parameter": "Voltage (L-N)",
+        "data_type": "float",
+        "scale": 1.0,
+        "unit": "V",
+        "description": "Line to Neutral Voltage"
+      },
+      {
+        "address": 40003,
+        "parameter": "Active Power",
+        "data_type": "float",
+        "scale": 1.0,
+        "unit": "kW",
+        "description": "Active Power Consumption"
+      }
+    ]
+  },
+  {
+    "device_id": 5,
+    "ip": "192.168.100.14",
+    "port": 502,
+    "slave_id": 5,
+    "timeout": 10,
+    "registers": [
+      {
+        "address": 40001,
+        "parameter": "Power Usage",
+        "data_type": "float",
+        "scale": 1.0,
+        "unit": "kW",
+        "description": "Heater 1 Power"
+      }
+    ]
+  },
+  {
+    "device_id": 6,
+    "ip": "192.168.100.15",
+    "port": 502,
+    "slave_id": 6,
+    "timeout": 10,
+    "registers": [
+      {
+        "address": 40001,
+        "parameter": "Voltage (L-N)",
+        "data_type": "float",
+        "scale": 1.0,
+        "unit": "V",
+        "description": "Line to Neutral Voltage"
+      },
+      {
+        "address": 40003,
+        "parameter": "Current",
+        "data_type": "float",
+        "scale": 1.0,
+        "unit": "A",
+        "description": "Current Reading"
+      },
+      {
+        "address": 40005,
+        "parameter": "Active Power",
+        "data_type": "float",
+        "scale": 1.0,
+        "unit": "kW",
+        "description": "Active Power Consumption"
+      },
+      {
+        "address": 40007,
+        "parameter": "Total Energy",
+        "data_type": "float",
+        "scale": 1.0,
+        "unit": "kWh",
+        "description": "Total Energy Consumption"
+      }
+    ]
+  },
+  {
+    "device_id": 7,
+    "ip": "192.168.100.16",
+    "port": 502,
+    "slave_id": 7,
+    "timeout": 10,
+    "registers": [
+      {
+        "address": 40001,
+        "parameter": "Flow Rate",
+        "data_type": "float",
+        "scale": 1.0,
+        "unit": "L/min",
+        "description": "Water Flow Rate"
+      },
+      {
+        "address": 40003,
+        "parameter": "Total Volume",
+        "data_type": "float",
+        "scale": 1.0,
+        "unit": "L",
+        "description": "Total Water Volume"
+      }
+    ]
+  },
+  {
+    "device_id": 8,
+    "ip": "192.168.100.17",
+    "port": 502,
+    "slave_id": 8,
+    "timeout": 10,
+    "registers": [
+      {
+        "address": 40001,
+        "parameter": "Power Consumption",
+        "data_type": "float",
+        "scale": 1.0,
+        "unit": "kW",
+        "description": "AC Unit 1 Power"
+      },
+      {
+        "address": 40003,
+        "parameter": "Runtime",
+        "data_type": "uint32",
+        "scale": 1.0,
+        "unit": "hours",
+        "description": "AC Unit 1 Runtime"
+      }
+    ]
+  }
+] 

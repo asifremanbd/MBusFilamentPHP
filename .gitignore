@@ -1,0 +1,34 @@
+# Laravel specific
+/energy-monitor/.phpunit.cache
+/energy-monitor/node_modules
+/energy-monitor/public/build
+/energy-monitor/public/hot
+/energy-monitor/public/storage
+/energy-monitor/storage/*.key
+/energy-monitor/vendor
+/energy-monitor/.env
+/energy-monitor/.env.backup
+/energy-monitor/.env.production
+/energy-monitor/.phpunit.result.cache
+/energy-monitor/Homestead.json
+/energy-monitor/Homestead.yaml
+/energy-monitor/auth.json
+/energy-monitor/npm-debug.log
+/energy-monitor/yarn-error.log
+
+# IDE specific
+/.fleet
+/.idea
+/.vscode
+/.cursor
+
+# Logs
+*.log
+startup-log.txt
+
+# Environment files
+.env
+*.env
+
+# Other
+test_api.php
