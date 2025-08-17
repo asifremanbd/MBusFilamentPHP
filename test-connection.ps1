@@ -72,14 +72,10 @@ function Sync-CodeToServer {
     # Push to GitHub
     Write-Log "Pushing to GitHub..."
     try {
-        git push origin main
+        git push origin master
     } catch {
-        try {
-            git push origin master
-        } catch {
-            Write-Error "Failed to push to GitHub. Please check your repository setup."
-            return
-        }
+        Write-Error "Failed to push to GitHub. Please check your repository setup."
+        return
     }
     
     # Test connection first
@@ -91,25 +87,8 @@ function Sync-CodeToServer {
     # Sync on server
     Write-Log "Syncing code on server..."
     
-    $sshCommands = @"
-        echo 'Starting server sync...'
-        
-        # Check if directory exists, if not create and clone
-        if [ ! -d '$SERVER_PATH' ]; then
-            echo 'Creating directory and cloning repository...'
-            mkdir -p '$SERVER_PATH'
-            cd '$SERVER_PATH'
-            git clone $GITHUB_REPO .
-        else
-            echo 'Directory exists, pulling latest changes...'
-            cd '$SERVER_PATH'
-            git pull origin main || git pull origin master
-        fi
-        
-        echo 'Sync completed!'
-        pwd
-        ls -la
-"@
+    # Create SSH commands as a single line to avoid line ending issues
+    $sshCommands = "echo 'Starting server sync...'; cd $SERVER_PATH; git pull origin master; echo 'Sync completed!'; pwd; ls -la"
     
     try {
         ssh "$SERVER_USER@$SERVER_IP" $sshCommands
