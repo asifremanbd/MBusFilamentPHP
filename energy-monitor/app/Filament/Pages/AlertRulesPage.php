@@ -50,7 +50,7 @@ class AlertRulesPage extends Page implements HasForms, HasTable
             ->schema([
                 Forms\Components\Section::make('Create New Alert Rule')
                     ->schema([
-                        Forms\Components\Select::make('alertRuleData.register_id')
+                        Forms\Components\Select::make('register_id')
                             ->label('Parameter')
                             ->options(function () {
                                 return Register::with(['device.gateway'])
@@ -72,7 +72,7 @@ class AlertRulesPage extends Page implements HasForms, HasTable
                                 }
                             }),
                             
-                        Forms\Components\Select::make('alertRuleData.condition')
+                        Forms\Components\Select::make('condition')
                             ->label('Condition')
                             ->options([
                                 'greater_than' => 'Greater Than',
@@ -85,7 +85,7 @@ class AlertRulesPage extends Page implements HasForms, HasTable
                             ->required()
                             ->live(),
                             
-                        Forms\Components\TextInput::make('alertRuleData.threshold_value')
+                        Forms\Components\TextInput::make('threshold_value')
                             ->label('Threshold Value')
                             ->numeric()
                             ->required()
@@ -98,7 +98,7 @@ class AlertRulesPage extends Page implements HasForms, HasTable
                                 return '';
                             }),
                             
-                        Forms\Components\Select::make('alertRuleData.severity')
+                        Forms\Components\Select::make('severity')
                             ->label('Alert Severity')
                             ->options([
                                 'low' => 'Low',
@@ -109,11 +109,11 @@ class AlertRulesPage extends Page implements HasForms, HasTable
                             ->required()
                             ->default('medium'),
                             
-                        Forms\Components\Toggle::make('alertRuleData.enabled')
+                        Forms\Components\Toggle::make('enabled')
                             ->label('Enable Rule')
                             ->default(true),
                             
-                        Forms\Components\Textarea::make('alertRuleData.description')
+                        Forms\Components\Textarea::make('description')
                             ->label('Description')
                             ->rows(2)
                             ->placeholder('Describe when this alert should trigger'),
@@ -298,18 +298,19 @@ class AlertRulesPage extends Page implements HasForms, HasTable
     
     public function createAlertRule(): void
     {
-        // Validate the data
-        if (!$this->alertRuleData['register_id'] || !$this->alertRuleData['threshold_value']) {
-            Notification::make()
-                ->title('Validation Error')
-                ->body('Please fill in all required fields')
-                ->danger()
-                ->send();
-            return;
+        // Validate the form using Filament's validation
+        try {
+            $this->form->validate();
+        } catch (\Illuminate\Validation\ValidationException $e) {
+            // Let Filament handle the validation errors
+            throw $e;
         }
         
+        // Get the validated data
+        $data = $this->form->getState();
+        
         // In production, this would create an alert rule record
-        $register = Register::find($this->alertRuleData['register_id']);
+        $register = Register::find($data['register_id']);
         
         if ($register) {
             Notification::make()
@@ -327,6 +328,9 @@ class AlertRulesPage extends Page implements HasForms, HasTable
                 'enabled' => true,
                 'description' => '',
             ];
+            
+            // Reset the form state
+            $this->form->fill($this->alertRuleData);
         } else {
             Notification::make()
                 ->title('Error')
