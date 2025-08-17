@@ -4,10 +4,10 @@
 # This script helps sync your GitHub repository with your Ubuntu server
 
 # Configuration
-GITHUB_REPO="https://github.com/yourusername/energy-monitor.git"
-SERVER_USER="ubuntu"
-SERVER_IP="your-server-ip"
-SERVER_PATH="/var/www/energy-monitor"
+GITHUB_REPO="https://github.com/asifremanbd/MBusFilamentPHP.git"
+SERVER_USER="root"
+SERVER_IP="165.22.112.94"
+SERVER_PATH="/var/www/MBusFilamentPHP"
 
 # Display help information
 show_help() {

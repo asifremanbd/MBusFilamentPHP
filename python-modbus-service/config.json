@@ -222,5 +222,102 @@
         "description": "AC Unit 1 Runtime"
       }
     ]
+  },
+  {
+    "device_id": 9,
+    "ip": "192.168.1.1",
+    "port": 502,
+    "slave_id": 1,
+    "timeout": 15,
+    "registers": [
+      {
+        "address": 40001,
+        "parameter": "Voltage L1",
+        "data_type": "float",
+        "scale": 0.1,
+        "unit": "V",
+        "description": "Phase 1 Voltage"
+      },
+      {
+        "address": 40003,
+        "parameter": "Voltage L2",
+        "data_type": "float",
+        "scale": 0.1,
+        "unit": "V",
+        "description": "Phase 2 Voltage"
+      },
+      {
+        "address": 40005,
+        "parameter": "Voltage L3",
+        "data_type": "float",
+        "scale": 0.1,
+        "unit": "V",
+        "description": "Phase 3 Voltage"
+      },
+      {
+        "address": 40007,
+        "parameter": "Current L1",
+        "data_type": "float",
+        "scale": 0.001,
+        "unit": "A",
+        "description": "Phase 1 Current"
+      },
+      {
+        "address": 40009,
+        "parameter": "Current L2",
+        "data_type": "float",
+        "scale": 0.001,
+        "unit": "A",
+        "description": "Phase 2 Current"
+      },
+      {
+        "address": 40011,
+        "parameter": "Current L3",
+        "data_type": "float",
+        "scale": 0.001,
+        "unit": "A",
+        "description": "Phase 3 Current"
+      },
+      {
+        "address": 40013,
+        "parameter": "Active Power",
+        "data_type": "float",
+        "scale": 0.1,
+        "unit": "kW",
+        "description": "Total Active Power"
+      },
+      {
+        "address": 40015,
+        "parameter": "Reactive Power",
+        "data_type": "float",
+        "scale": 0.1,
+        "unit": "kVAR",
+        "description": "Total Reactive Power"
+      },
+      {
+        "address": 40017,
+        "parameter": "Power Factor",
+        "data_type": "float",
+        "scale": 0.001,
+        "unit": "",
+        "description": "Total Power Factor"
+      },
+      {
+        "address": 40019,
+        "parameter": "Frequency",
+        "data_type": "float",
+        "scale": 0.01,
+        "unit": "Hz",
+        "description": "System Frequency"
+      },
+      {
+        "address": 40021,
+        "parameter": "Total Energy",
+        "data_type": "uint32",
+        "scale": 0.1,
+        "unit": "kWh",
+        "description": "Total Energy Consumption"
+      }
+    ]
   }
 ] 
