@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->foreignId('gateway_id')->constrained()->onDelete('cascade');
-            $table->json('selected_metrics')->default('["signal_strength"]');
+            $table->json('selected_metrics')->nullable();
             $table->string('time_range', 10)->default('24h');
             $table->string('chart_type', 20)->default('line');
             $table->timestamps();
