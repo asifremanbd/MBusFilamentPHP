@@ -14,7 +14,7 @@ class RTUAlertsWidget extends Widget
     
     protected int | string | array $columnSpan = 'full';
     
-    public Gateway $gateway;
+    public ?Gateway $gateway = null;
     
     protected RTUAlertService $alertService;
     
@@ -23,8 +23,17 @@ class RTUAlertsWidget extends Widget
         $this->alertService = app(RTUAlertService::class);
     }
     
+    public function mount(?Gateway $gateway = null): void
+    {
+        $this->gateway = $gateway ?? Gateway::first();
+    }
+    
     public function getData(): array
     {
+        if (!$this->gateway) {
+            return $this->getEmptyData();
+        }
+        
         $filters = $this->getFilters();
         
         // Get grouped alerts using the RTUAlertService
@@ -115,6 +124,10 @@ class RTUAlertsWidget extends Widget
     
     protected function getAvailableDevices(): array
     {
+        if (!$this->gateway) {
+            return [];
+        }
+        
         return $this->gateway->devices()
             ->select('id', 'name')
             ->get()
@@ -146,9 +159,41 @@ class RTUAlertsWidget extends Widget
         ];
     }
     
+    protected function getEmptyData(): array
+    {
+        return [
+            'alerts_data' => [
+                'critical_count' => 0,
+                'warning_count' => 0,
+                'info_count' => 0,
+                'has_alerts' => false,
+                'grouped_alerts' => collect(),
+                'status_summary' => 'No Gateway Selected'
+            ],
+            'device_status' => [
+                'status' => 'ok',
+                'text' => 'No Gateway Selected',
+                'color' => 'gray',
+                'icon' => 'heroicon-o-information-circle'
+            ],
+            'filters' => [],
+            'available_devices' => [],
+            'severity_options' => $this->getSeverityOptions(),
+            'time_range_options' => $this->getTimeRangeOptions(),
+            'gateway' => null
+        ];
+    }
+    
     public function filterAlerts(): JsonResponse
     {
         try {
+            if (!$this->gateway) {
+                return response()->json([
+                    'success' => false,
+                    'message' => 'No gateway selected'
+                ], 400);
+            }
+            
             $filters = Request::input('filters', []);
             
             // Get filtered alerts
