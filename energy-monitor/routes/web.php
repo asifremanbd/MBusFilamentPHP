@@ -31,4 +31,9 @@ Route::middleware(['auth'])->group(function () {
     
     Route::get('/dashboard/gateway/{gateway}', [App\Http\Controllers\DashboardController::class, 'gatewayDashboard'])
         ->name('dashboard.gateway');
+    
+    // RTU Dashboard routes with proper middleware and authorization
+    Route::get('/dashboard/rtu/{gateway}', [App\Http\Controllers\RTUDashboardController::class, 'rtuDashboard'])
+        ->name('dashboard.rtu')
+        ->middleware(['auth', 'verified']);
 });

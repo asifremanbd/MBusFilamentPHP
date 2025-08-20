@@ -6,7 +6,7 @@
 # Configuration - Update these values
 LOCAL_DB_NAME="energy_monitor"
 LOCAL_DB_USER="root"
-LOCAL_DB_PASS="your_local_password"
+LOCAL_DB_PASS=""  # Empty password from .env file
 
 SERVER_USER="root"
 SERVER_IP="165.22.112.94"

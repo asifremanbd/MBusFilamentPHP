@@ -386,4 +386,3 @@ class DashboardPerformanceTest extends TestCase
         $this->assertLessThan(0.1, $errorTime, 'Error handling took too long');
     }
 }
-"

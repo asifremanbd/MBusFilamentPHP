@@ -1,0 +1,210 @@
+[
+  {
+    "device_id": 1,
+    "name": "Energy Meter",
+    "location": "Main Distribution board",
+    "ip": "192.168.1.100",
+    "port": 502,
+    "slave_id": 1,
+    "timeout": 10,
+    "registers": [
+      {
+        "address": 40001,
+        "parameter": "Voltage (L-N)",
+        "data_type": "float",
+        "scale": 1.0,
+        "unit": "V",
+        "description": "Phase L1, L2, L3"
+      },
+      {
+        "address": 40003,
+        "parameter": "Current",
+        "data_type": "float",
+        "scale": 1.0,
+        "unit": "A",
+        "description": "Current Reading"
+      },
+      {
+        "address": 40005,
+        "parameter": "Active Power",
+        "data_type": "float",
+        "scale": 0.1,
+        "unit": "kW",
+        "description": "Active Power Consumption"
+      },
+      {
+        "address": 40007,
+        "parameter": "Total Energy (kWh)",
+        "data_type": "float",
+        "scale": 1.0,
+        "unit": "kWh",
+        "description": "Accumulated Energy"
+      }
+    ]
+  },
+  {
+    "device_id": 2,
+    "name": "Water Meter",
+    "location": "Inlet Pipe",
+    "ip": "192.168.1.101",
+    "port": 502,
+    "slave_id": 2,
+    "timeout": 10,
+    "registers": [
+      {
+        "address": 40010,
+        "parameter": "Flow Rate",
+        "data_type": "float",
+        "scale": 1.0,
+        "unit": "L/min",
+        "description": "Water Flow Rate"
+      },
+      {
+        "address": 40012,
+        "parameter": "Total Volume",
+        "data_type": "float",
+        "scale": 1.0,
+        "unit": "L",
+        "description": "Accumulated Water Volume"
+      }
+    ]
+  },
+  {
+    "device_id": 3,
+    "name": "AC Unit 1 Meter",
+    "location": "External Condenser 1",
+    "ip": "192.168.1.102",
+    "port": 502,
+    "slave_id": 3,
+    "timeout": 10,
+    "registers": [
+      {
+        "address": 40020,
+        "parameter": "Power Consumption",
+        "data_type": "uint16",
+        "scale": 1.0,
+        "unit": "W",
+        "description": "AC Unit 1 Power"
+      },
+      {
+        "address": 40022,
+        "parameter": "Runtime",
+        "data_type": "uint16",
+        "scale": 1.0,
+        "unit": "hours",
+        "description": "AC Unit 1 Runtime"
+      }
+    ]
+  },
+  {
+    "device_id": 4,
+    "name": "AC Unit 2 Meter",
+    "location": "External Condenser 2",
+    "ip": "192.168.1.103",
+    "port": 502,
+    "slave_id": 4,
+    "timeout": 10,
+    "registers": [
+      {
+        "address": 40020,
+        "parameter": "Power Consumption",
+        "data_type": "uint16",
+        "scale": 1.0,
+        "unit": "W",
+        "description": "AC Unit 2 Power"
+      },
+      {
+        "address": 40022,
+        "parameter": "Runtime",
+        "data_type": "uint16",
+        "scale": 1.0,
+        "unit": "hours",
+        "description": "AC Unit 2 Runtime"
+      }
+    ]
+  },
+  {
+    "device_id": 5,
+    "name": "AC Unit 3 Meter",
+    "location": "External Condenser 3",
+    "ip": "192.168.1.104",
+    "port": 502,
+    "slave_id": 5,
+    "timeout": 10,
+    "registers": [
+      {
+        "address": 40020,
+        "parameter": "Power Consumption",
+        "data_type": "uint16",
+        "scale": 1.0,
+        "unit": "W",
+        "description": "AC Unit 3 Power"
+      },
+      {
+        "address": 40022,
+        "parameter": "Runtime",
+        "data_type": "uint16",
+        "scale": 1.0,
+        "unit": "hours",
+        "description": "AC Unit 3 Runtime"
+      }
+    ]
+  },
+  {
+    "device_id": 6,
+    "name": "Heater 1st floor 1",
+    "location": "1st Floor",
+    "ip": "192.168.1.105",
+    "port": 502,
+    "slave_id": 6,
+    "timeout": 10,
+    "registers": [
+      {
+        "address": 40030,
+        "parameter": "Power Usage",
+        "data_type": "float",
+        "scale": 1.0,
+        "unit": "kW",
+        "description": "Heater 1 Power Usage"
+      }
+    ]
+  },
+  {
+    "device_id": 7,
+    "name": "Heater 1st floor 2",
+    "location": "1st floor",
+    "ip": "192.168.1.106",
+    "port": 502,
+    "slave_id": 7,
+    "timeout": 10,
+    "registers": [
+      {
+        "address": 40030,
+        "parameter": "Power Usage",
+        "data_type": "float",
+        "scale": 1.0,
+        "unit": "kW",
+        "description": "Heater 2 Power Usage"
+      }
+    ]
+  },
+  {
+    "device_id": 8,
+    "name": "Router Power Meter",
+    "location": "Server Rack",
+    "ip": "192.168.1.107",
+    "port": 502,
+    "slave_id": 8,
+    "timeout": 10,
+    "registers": [
+      {
+        "address": 40035,
+        "parameter": "Voltage Input",
+        "data_type": "float",
+        "scale": 1.0,
+        "unit": "V",
+        "description": "Backup Power Voltage"
+      }
+    ]
+  }
+]

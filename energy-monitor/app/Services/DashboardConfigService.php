@@ -104,6 +104,20 @@ class DashboardConfigService
                     'gateway-alerts' => true,
                 ]
             ],
+            'rtu' => [
+                'visibility' => [
+                    'rtu-system-health' => true,
+                    'rtu-network-status' => true,
+                    'rtu-io-monitoring' => true,
+                    'rtu-alerts' => true,
+                    'rtu-trend-visualization' => true,
+                ],
+                'sections' => [
+                    'system-health' => true,
+                    'network-status' => true,
+                    'io-monitoring' => true,
+                ]
+            ],
             default => [
                 'visibility' => []
             ]
@@ -142,6 +156,27 @@ class DashboardConfigService
                     'real-time-readings' => ['width' => 4, 'height' => 6],
                     'gateway-stats' => ['width' => 6, 'height' => 4],
                     'gateway-alerts' => ['width' => 6, 'height' => 4],
+                ]
+            ],
+            'rtu' => [
+                'positions' => [
+                    'rtu-system-health' => ['row' => 0, 'col' => 0],
+                    'rtu-network-status' => ['row' => 0, 'col' => 4],
+                    'rtu-io-monitoring' => ['row' => 0, 'col' => 8],
+                    'rtu-alerts' => ['row' => 1, 'col' => 0],
+                    'rtu-trend-visualization' => ['row' => 1, 'col' => 6],
+                ],
+                'sizes' => [
+                    'rtu-system-health' => ['width' => 4, 'height' => 4],
+                    'rtu-network-status' => ['width' => 4, 'height' => 4],
+                    'rtu-io-monitoring' => ['width' => 4, 'height' => 4],
+                    'rtu-alerts' => ['width' => 6, 'height' => 6],
+                    'rtu-trend-visualization' => ['width' => 6, 'height' => 6],
+                ],
+                'sections' => [
+                    'system-health' => ['collapsed' => false],
+                    'network-status' => ['collapsed' => false],
+                    'io-monitoring' => ['collapsed' => false],
                 ]
             ],
             default => [
@@ -199,6 +234,33 @@ class DashboardConfigService
                     'name' => 'Gateway Alerts',
                     'description' => 'Alerts specific to this gateway',
                     'category' => 'alerts'
+                ],
+            ],
+            'rtu' => [
+                'rtu-system-health' => [
+                    'name' => 'RTU System Health',
+                    'description' => 'Router uptime, CPU load, and memory usage monitoring',
+                    'category' => 'system'
+                ],
+                'rtu-network-status' => [
+                    'name' => 'RTU Network Status',
+                    'description' => 'WAN IP, SIM details, and signal quality metrics',
+                    'category' => 'network'
+                ],
+                'rtu-io-monitoring' => [
+                    'name' => 'RTU I/O Monitoring',
+                    'description' => 'Digital inputs/outputs and analog input monitoring with control',
+                    'category' => 'io'
+                ],
+                'rtu-alerts' => [
+                    'name' => 'RTU Alerts',
+                    'description' => 'Grouped and filtered RTU-specific alerts',
+                    'category' => 'alerts'
+                ],
+                'rtu-trend-visualization' => [
+                    'name' => 'RTU Trend Visualization',
+                    'description' => 'Multi-metric trend charts with selectable parameters',
+                    'category' => 'analytics'
                 ],
             ],
             default => []

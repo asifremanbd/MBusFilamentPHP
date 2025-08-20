@@ -1,0 +1,83 @@
+[
+  {
+    "device_id": 9,
+    "ip": "192.168.1.1",
+    "port": 502,
+    "slave_id": 3,
+    "timeout": 15,
+    "registers": [
+      {
+        "address": 1,
+        "parameter": "Digital Input 1",
+        "data_type": "uint16",
+        "scale": 1.0,
+        "unit": "",
+        "description": "Digital Input 1 Status"
+      },
+      {
+        "address": 2,
+        "parameter": "Digital Input 2",
+        "data_type": "uint16",
+        "scale": 1.0,
+        "unit": "",
+        "description": "Digital Input 2 Status"
+      },
+      {
+        "address": 3,
+        "parameter": "Digital Output 1",
+        "data_type": "uint16",
+        "scale": 1.0,
+        "unit": "",
+        "description": "Digital Output 1 Status"
+      },
+      {
+        "address": 4,
+        "parameter": "Digital Output 2",
+        "data_type": "uint16",
+        "scale": 1.0,
+        "unit": "",
+        "description": "Digital Output 2 Status"
+      },
+      {
+        "address": 5,
+        "parameter": "Analog Input 1",
+        "data_type": "uint16",
+        "scale": 1.0,
+        "unit": "V",
+        "description": "Analog Input 1 Voltage"
+      },
+      {
+        "address": 6,
+        "parameter": "Analog Input 2",
+        "data_type": "uint16",
+        "scale": 0.01,
+        "unit": "V",
+        "description": "Analog Input 2 Voltage"
+      },
+      {
+        "address": 64,
+        "parameter": "GSM Signal Strength",
+        "data_type": "uint16",
+        "scale": 1.0,
+        "unit": "dBm",
+        "description": "GSM Signal Strength"
+      },
+      {
+        "address": 65,
+        "parameter": "Connection State",
+        "data_type": "uint16",
+        "scale": 1.0,
+        "unit": "",
+        "description": "Connection State"
+      },
+      {
+        "address": 200,
+        "parameter": "System Status",
+        "data_type": "uint16",
+        "scale": 1.0,
+        "unit": "",
+        "description": "System Status Register"
+      }
+    ]
+  }
+]

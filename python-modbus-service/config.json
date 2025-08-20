@@ -227,96 +227,80 @@
     "device_id": 9,
     "ip": "192.168.1.1",
     "port": 502,
-    "slave_id": 1,
+    "slave_id": 3,
     "timeout": 15,
     "registers": [
       {
-        "address": 40001,
-        "parameter": "Voltage L1",
-        "data_type": "float",
-        "scale": 0.1,
-        "unit": "V",
-        "description": "Phase 1 Voltage"
-      },
-      {
-        "address": 40003,
-        "parameter": "Voltage L2",
-        "data_type": "float",
-        "scale": 0.1,
-        "unit": "V",
-        "description": "Phase 2 Voltage"
-      },
-      {
-        "address": 40005,
-        "parameter": "Voltage L3",
-        "data_type": "float",
-        "scale": 0.1,
-        "unit": "V",
-        "description": "Phase 3 Voltage"
-      },
-      {
-        "address": 40007,
-        "parameter": "Current L1",
-        "data_type": "float",
-        "scale": 0.001,
-        "unit": "A",
-        "description": "Phase 1 Current"
-      },
-      {
-        "address": 40009,
-        "parameter": "Current L2",
-        "data_type": "float",
-        "scale": 0.001,
-        "unit": "A",
-        "description": "Phase 2 Current"
-      },
-      {
-        "address": 40011,
-        "parameter": "Current L3",
-        "data_type": "float",
-        "scale": 0.001,
-        "unit": "A",
-        "description": "Phase 3 Current"
-      },
-      {
-        "address": 40013,
-        "parameter": "Active Power",
-        "data_type": "float",
-        "scale": 0.1,
-        "unit": "kW",
-        "description": "Total Active Power"
-      },
-      {
-        "address": 40015,
-        "parameter": "Reactive Power",
-        "data_type": "float",
-        "scale": 0.1,
-        "unit": "kVAR",
-        "description": "Total Reactive Power"
-      },
-      {
-        "address": 40017,
-        "parameter": "Power Factor",
-        "data_type": "float",
-        "scale": 0.001,
+        "address": 1,
+        "parameter": "Digital Input 1",
+        "data_type": "uint16",
+        "scale": 1.0,
         "unit": "",
-        "description": "Total Power Factor"
+        "description": "Digital Input 1 Status"
       },
       {
-        "address": 40019,
-        "parameter": "Frequency",
-        "data_type": "float",
+        "address": 2,
+        "parameter": "Digital Input 2",
+        "data_type": "uint16",
+        "scale": 1.0,
+        "unit": "",
+        "description": "Digital Input 2 Status"
+      },
+      {
+        "address": 3,
+        "parameter": "Digital Output 1",
+        "data_type": "uint16",
+        "scale": 1.0,
+        "unit": "",
+        "description": "Digital Output 1 Status"
+      },
+      {
+        "address": 4,
+        "parameter": "Digital Output 2",
+        "data_type": "uint16",
+        "scale": 1.0,
+        "unit": "",
+        "description": "Digital Output 2 Status"
+      },
+      {
+        "address": 5,
+        "parameter": "Analog Input 1",
+        "data_type": "uint16",
+        "scale": 1.0,
+        "unit": "V",
+        "description": "Analog Input 1 Voltage"
+      },
+      {
+        "address": 6,
+        "parameter": "Analog Input 2",
+        "data_type": "uint16",
         "scale": 0.01,
-        "unit": "Hz",
-        "description": "System Frequency"
+        "unit": "V",
+        "description": "Analog Input 2 Voltage"
       },
       {
-        "address": 40021,
-        "parameter": "Total Energy",
-        "data_type": "uint32",
-        "scale": 0.1,
-        "unit": "kWh",
-        "description": "Total Energy Consumption"
+        "address": 64,
+        "parameter": "GSM Signal Strength",
+        "data_type": "uint16",
+        "scale": 1.0,
+        "unit": "dBm",
+        "description": "GSM Signal Strength"
+      },
+      {
+        "address": 65,
+        "parameter": "Connection State",
+        "data_type": "uint16",
+        "scale": 1.0,
+        "unit": "",
+        "description": "Connection State"
+      },
+      {
+        "address": 200,
+        "parameter": "System Status",
+        "data_type": "uint16",
+        "scale": 1.0,
+        "unit": "",
+        "description": "System Status Register"
       }
     ]
   }

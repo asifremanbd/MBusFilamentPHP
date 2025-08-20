@@ -362,4 +362,3 @@ class ComprehensivePermissionTest extends TestCase
         );
     }
 }
-"

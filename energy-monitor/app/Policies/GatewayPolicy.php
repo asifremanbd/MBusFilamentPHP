@@ -72,4 +72,20 @@ class GatewayPolicy
     {
         return $user->isAdmin();
     }
+
+    /**
+     * Determine whether the user can control RTU gateway I/O operations.
+     */
+    public function control(User $user, Gateway $gateway): bool
+    {
+        // Only admins can control RTU I/O operations for security reasons
+        // In the future, this could be expanded to include specific control permissions
+        if ($user->isAdmin()) {
+            return true;
+        }
+
+        // Operators with specific control permissions could be added here
+        // For now, we restrict control operations to admins only
+        return false;
+    }
 }

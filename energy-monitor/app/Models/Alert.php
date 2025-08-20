@@ -38,6 +38,11 @@ class Alert extends Model
         return $this->belongsTo(User::class, 'resolved_by');
     }
 
+    public function gateway()
+    {
+        return $this->hasOneThrough(Gateway::class, Device::class, 'id', 'id', 'device_id', 'gateway_id');
+    }
+
     /**
      * Get the severity color for UI display
      */

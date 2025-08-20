@@ -420,4 +420,3 @@ class LoadTest extends TestCase
         return sqrt($variance);
     }
 }
-"

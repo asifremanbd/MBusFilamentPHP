@@ -21,7 +21,7 @@ $SERVER_PATH = "/MBusFilamentPHP"
 # Database configuration
 $LOCAL_DB_NAME = "energy_monitor"
 $LOCAL_DB_USER = "root"
-$LOCAL_DB_PASS = "your_local_password"
+$LOCAL_DB_PASS = ""  # Empty password from .env file
 $SERVER_DB_NAME = "energy_monitor"
 $SERVER_DB_USER = "root"
 $SERVER_DB_PASS = "2tDEoBWefYLp.PYyPF"
