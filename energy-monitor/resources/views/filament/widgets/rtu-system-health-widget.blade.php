@@ -1,7 +1,7 @@
 @php
     $data = $this->getData();
     $sectionConfig = app(\App\Services\RTUDashboardSectionService::class)->getSectionConfiguration(auth()->user())['system_health'] ?? [];
-    $hasError = !empty($data['error']) || $data['error_info']['has_error'];
+    $hasError = !empty($data['error']) || ($data['error_info']['has_error'] ?? false);
     $errorInfo = $data['error_info'] ?? ['has_error' => false];
 @endphp
 
@@ -13,7 +13,7 @@
         :is-collapsed="$sectionConfig['is_collapsed'] ?? false"
         :display-order="$sectionConfig['display_order'] ?? 1">
         
-        @if($errorInfo['has_error'] && $errorInfo['is_cached'])
+        @if(($errorInfo['has_error'] ?? false) && ($errorInfo['is_cached'] ?? false))
             <x-slot name="badge">
                 <x-filament::badge color="warning" size="sm">
                     Cached Data
@@ -21,7 +21,7 @@
             </x-slot>
         @endif
         
-        @if($errorInfo['has_error'] && $errorInfo['retry_available'])
+        @if(($errorInfo['has_error'] ?? false) && ($errorInfo['retry_available'] ?? false))
             <x-slot name="actions">
                 <x-filament::button 
                     wire:click="retryDataCollection"
@@ -78,7 +78,7 @@
                 </div>
             @endif
 
-            @if(!$hasError || ($hasError && $errorInfo['fallback_source'] !== 'none'))
+            @if(!$hasError || ($hasError && ($errorInfo['fallback_source'] ?? 'none') !== 'none'))
                 <!-- Overall Health Score -->
                 <div class="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 p-4 rounded-lg border border-blue-200 dark:border-blue-800">
                     <div class="flex items-center justify-between">
