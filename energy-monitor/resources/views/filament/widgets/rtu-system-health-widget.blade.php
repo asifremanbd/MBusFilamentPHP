@@ -52,7 +52,7 @@
                                 {{ $errorInfo['message'] ?? $data['error'] ?? 'System Health Data Unavailable' }}
                             </h4>
                             
-                            @if($errorInfo['cache_age'])
+                            @if(isset($errorInfo['cache_age']) && $errorInfo['cache_age'])
                                 <p class="text-xs text-red-600 dark:text-red-300 mb-2">
                                     Showing cached data from {{ $errorInfo['cache_age'] }} minutes ago
                                 </p>
