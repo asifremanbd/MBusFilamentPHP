@@ -4,20 +4,26 @@ namespace App\Filament\Widgets;
 
 use App\Models\Gateway;
 use App\Services\RTUDataService;
-use Filament\Widgets\Widget;
+use Livewire\Component;
 use Illuminate\Contracts\View\View;
 
-class RTUSystemHealthWidget extends Widget
+class RTUSystemHealthWidget extends Component
 {
-    protected static string $view = 'filament.widgets.rtu-system-health-widget';
-    protected static ?int $sort = 1;
-    protected int | string | array $columnSpan = 'full';
+    protected string $view = 'filament.widgets.rtu-system-health-widget';
     
     public ?Gateway $gateway = null;
 
     public function mount(?Gateway $gateway = null): void
     {
         $this->gateway = $gateway;
+    }
+
+    public function render(): View
+    {
+        return view($this->view, [
+            'data' => $this->getData(),
+            'gateway' => $this->gateway
+        ]);
     }
 
     public function getData(): array
@@ -270,7 +276,7 @@ class RTUSystemHealthWidget extends Widget
         $result = $retryService->retryDataCollection($this->gateway, 'system_health');
         
         // Refresh widget data after retry
-        $this->dispatch('refresh-widget');
+        $this->dispatch('refreshWidget');
         
         return $result;
     }
