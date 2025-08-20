@@ -10,6 +10,8 @@ class RTUTrendPreference extends Model
 {
     use HasFactory;
 
+    protected $table = 'rtu_trend_preferences';
+
     protected $fillable = [
         'user_id',
         'gateway_id',

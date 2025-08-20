@@ -10,6 +10,8 @@ class RTUDashboardSection extends Model
 {
     use HasFactory;
 
+    protected $table = 'rtu_dashboard_sections';
+
     protected $fillable = [
         'user_id',
         'section_name',
