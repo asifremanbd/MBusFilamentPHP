@@ -20,6 +20,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// Login route for non-Filament authentication redirects
+Route::get('/login', function () {
+    return redirect('/admin/login');
+})->name('login');
+
 // Dashboard routes (protected by auth)
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', function () {
