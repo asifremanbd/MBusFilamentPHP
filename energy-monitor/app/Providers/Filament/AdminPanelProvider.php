@@ -33,7 +33,6 @@ class AdminPanelProvider extends PanelProvider
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->pages([
                 Pages\Dashboard::class,
-                \App\Filament\Pages\GatewayDashboard::class,
                 \App\Filament\Pages\UserProfile::class,
                 \App\Filament\Pages\ReportsPage::class,
                 \App\Filament\Pages\AlertRulesPage::class,
