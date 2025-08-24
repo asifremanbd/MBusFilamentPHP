@@ -14,6 +14,10 @@ class Device extends Model
         'slave_id',
         'location_tag',
         'gateway_id',
+        'manufacturer',
+        'part_number',
+        'serial_number',
+        'notes',
     ];
 
     public function gateway()

@@ -17,10 +17,6 @@
     
     <!-- Alpine.js -->
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    
-    <!-- Dashboard Components -->
-    <script src="{{ asset('js/components/gateway-selector.js') }}"></script>
-    <script src="{{ asset('js/components/dashboard-customizer.js') }}"></script>
 </head>
 <body class="font-sans antialiased bg-gray-50">
     <div class="min-h-screen">

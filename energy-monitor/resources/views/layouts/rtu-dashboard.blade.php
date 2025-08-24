@@ -12,7 +12,7 @@
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
     <!-- Scripts -->
-    @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/js/rtu-sections.js', 'resources/js/rtu-widgets.js', 'resources/css/rtu-widgets.css'])
+    @vite(['resources/css/app.css', 'resources/css/rtu-widgets.css', 'resources/css/dashboard-customization.css', 'resources/js/app.js'])
     
     <!-- Filament Styles -->
     @filamentStyles
